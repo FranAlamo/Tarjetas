@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenge1 Fran</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <main>
+      <div class="container">
+        <section class="section-one">
+          <div class="background">
+            <img
+              src="./imágenes/bg-main-desktop.png"
+              alt="background"
+              id="background-left"
+              height="100%"
+            />
+            <div class="cards">
+              <div class="card-front">
+                <img
+                  src="./imágenes/card-logo.svg"
+                  alt="card-logo"
+                  class="logo"
+                  id="logo"
+                />
+                <img src="./imágenes/bg-card-front.png" alt="card-front" />
+                <h1 id="number">0000 0000 0000 0000</h1>
+                <div class="info-card">
+                  <span id="name">Jane Appleseed</span>
+                  <span id="date">
+                    <span id="month">00</span>
+                    /
+                    <span id="year">00</span>
+                  </span>
+                </div>
+              </div>
+              <div class="card-back">
+                <img src="./imágenes/bg-card-back.png" alt="card-back" />
+                <span id="cvc">000</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- CONTAINER DERECHO -->
+
+        <section class="section-two">
+          <div class="right-section">
+            <form id="formulario">
+              <div class="info-all">
+                <div class="info-1">
+                  <label for="card_name">Cardholder Name</label>
+                  <input
+                    type="text"
+                    placeholder="e.g. Jane Appleseed"
+                    name="name"
+                    id="card_name"
+                  />
+                  <p class="card_name_error">
+                    El nombre tiene que ser de 4 a 30 dígitos y solo puede
+                    contener letras
+                  </p>
+
+                  <div class="info-2">
+                    <label for="card_number">Card Number</label>
+                    <input
+                      type="number"
+                      placeholder="e.g. 1234 5678 9123 0000"
+                      id="card_number"
+                      name="number"
+                    />
+                    <p class="card_number_error">
+                      El número de la tarjeta tiene que ser de 16 dígitos y solo
+                      puede contener números
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="information-card">
+                <div id="card-date">
+                  <label for="card_date">Exp. Date (MM/YY)</label>
+                  <div class="month">
+                    <div>
+                      <input
+                        type="number"
+                        placeholder="MM"
+                        id="card_month"
+                        name="month"
+                      />
+                      <p class="card_month_error">El mes debe ser válido</p>
+                    </div>
+                    <div>
+                      <input placeholder="YYYY" id="card_year" name="year" />
+                      <p class="card_year_error">El año debe ser válido</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="info-cvc">
+                  <label for="card_cvc">CVC</label>
+                  <input
+                    type="number"
+                    placeholder="e.g. 123"
+                    id="card_cvc"
+                    name="cvc"
+                  />
+                  <p class="card_cvc_error">El cvc debe ser válido</p>
+                </div>
+              </div>
+              <button id="submit_btn" type="submit">Confirm</button>
+            </form>
+            <div class="thank disabled">
+              <img src="./imágenes/icon-complete.svg" alt="Completed" />
+              <h1>Thank you!</h1>
+              <h5>We've added your card details</h5>
+              <button class="button" id="continue">Continue</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.0.2/cleave.min.js"
+      integrity="sha512-SvgzybymTn9KvnNGu0HxXiGoNeOi0TTK7viiG0EGn2Qbeu/NFi3JdWrJs2JHiGA1Lph+dxiDv5F9gDlcgBzjfA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

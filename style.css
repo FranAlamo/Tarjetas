@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+:root {
+  --active-color: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --red-errors: hsl(0, 100%, 66%);
+  --white: hsl(0, 0%, 100%);
+  --violet-1: hsl(270, 3%, 87%);
+  --violet-2: hsl(279, 6%, 55%);
+  --violet-3: hsl(278, 68%, 11%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+.hidden {
+  display: none !important;
+}
+main {
+  height: 100vh;
+  width: 100vw;
+}
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  height: 100%;
+}
+.background {
+  height: inherit;
+}
+.section-one {
+  height: 100%;
+  width: 50%;
+  position: relative;
+}
+.cards {
+  position: absolute;
+  top: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  left: 100%;
+  transform: translate(-50%, -50%);
+}
+.card-front {
+  position: relative;
+  transform: translateX(-100px);
+}
+
+.logo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+}
+#number {
+  position: absolute;
+  color: var(--white);
+  bottom: 5rem;
+  left: 1rem;
+  letter-spacing: 6px;
+}
+.info-card {
+  position: absolute;
+  bottom: 2rem;
+  left: 1rem;
+  right: 3rem;
+  display: flex;
+  color: var(--white);
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+.card-back {
+  position: relative;
+}
+#cvc {
+  position: absolute;
+  right: 3.5rem;
+  top: 7rem;
+  color: var(--white);
+}
+.section-two {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.section-two form {
+  display: grid;
+  gap: 1rem;
+  width: 400px;
+  height: 100%;
+}
+.information-card {
+  display: flex;
+  grid-column: 2 span;
+}
+.info-all {
+  display: flex;
+  flex-direction: column;
+  grid-column: 2 span;
+}
+#card_month {
+  width: 80px;
+}
+#card_year {
+  width: 80px;
+}
+input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem;
+  font-size: 18px;
+  border: 1px solid var(--violet-1);
+  border-radius: 6px;
+  margin-top: 15px;
+}
+.info-cvc {
+  margin-left: 10px;
+}
+.month {
+  display: flex;
+  gap: 1rem;
+}
+form button {
+  font-size: 18px;
+  height: 200%;
+  width: 640%;
+  color: white;
+  border-radius: 6px;
+  background: var(--violet-3);
+  border-style: none;
+}
+.button:hover {
+  background-color: var(--violet-2);
+  color: var(--white);
+  cursor: pointer;
+  transition-duration: 0.5s;
+}
+.form-incorrect {
+  border: solid 2px hsl(0, 100%, 66%);
+}
+.form-correct {
+  border: 2px solid rgba(26, 228, 26, 0.671);
+}
+.card_name_error,
+.card_number_error,
+.card_month_error,
+.card_year_error,
+.card_cvc_error {
+  color: red;
+  font-size: 0.8rem;
+  display: none;
+  position: relative;
+}
+.card_name_error-activo {
+  display: block;
+}
+.card_number_error-activo {
+  display: block;
+}
+.card_month_error-activo {
+  display: block;
+}
+.card_year_error-activo {
+  display: block;
+}
+.card_cvc_error-activo {
+  display: block;
+}
+.thank {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.thank h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--violet-3);
+}
+.thank h5 {
+  letter-spacing: 2px;
+  color: var(--violet-2);
+}
+.thank {
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+.thank.active {
+  display: flex;
+}
+#continue {
+  color: white;
+  width: 100%;
+  border-radius: 6px;
+  padding: 1rem;
+  font-size: 18px;
+  background-color: var(--violet-3);
+  cursor: pointer;
+}
+.disabled {
+  display: none !important;
+}
+
+label {
+  color: black;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 1020px) and (min-width: 375px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "section-one"
+      "section-two";
+  }
+  .card-back img,
+  .card-front img {
+    width: 450px;
+  }
+
+  #number {
+    font-size: 1.4rem;
+  }
+  #name {
+    font-size: 1.4rem;
+  }
+  #month {
+    font-size: 1.4rem;
+  }
+  #cvc {
+    font-size: 1.4rem;
+    right: 3.5rem;
+    top: 7rem;
+  }
+  #year {
+    font-size: 1.4rem;
+  }
+  #background-left {
+    display: none !important;
+  }
+  #logo {
+    width: 25%;
+  }
+  .section-one {
+    width: 100%;
+    min-height: 10vh;
+    background-image: url("./imágenes/bg-main-mobile.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+  .cards {
+    flex-direction: column-reverse;
+    left: 61%;
+    top: 60%;
+    gap: 0;
+  }
+  .card-back {
+    transform: translateY(70px);
+  }
+  .card-front {
+    z-index: 100;
+  }
+  .section-two {
+    margin-top: 1rem;
+    display: flex;
+    justify-content: center;
+  }
+}
